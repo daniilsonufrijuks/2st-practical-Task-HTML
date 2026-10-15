@@ -1,0 +1,297 @@
+/* Please put your name, last name, studentID number in this comment */
+/* Daniils Onufrijuks do62022 */
+
+
+/* Load the two Google fonts used on the page */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+/* ---------- Base / body ---------- */
+body {
+    margin: 0; /* remove the browser's default outer margin */
+    padding: 24px 12px; /* space between the window edge and the page: 24px top/bottom, 12px left/right */
+    font-family: 'Source Sans 3', Arial, sans-serif; /* body font, with fallbacks if the font fails to load */
+    font-size: 18px; /* base text size */
+    line-height: 1.6; /* comfortable spacing between lines of text */
+    color: #22303a; /* default text colour (dark ink) */
+    background-color: #c9dcdc; /* fallback colour behind the pattern */
+    /* background image: inline SVG of overlapping arcs (Art Nouveau-style scales) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 24a24 24 0 0 1 48 0' fill='none' stroke='%23a9c6c8' stroke-width='1.5'/%3E%3Cpath d='M-24 12a24 24 0 0 1 48 0M24 12a24 24 0 0 1 48 0' fill='none' stroke='%23a9c6c8' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat; /* tile the pattern horizontally and vertically */
+    background-position: top center; /* start tiling from the top centre of the page */
+}
+
+#page {
+    max-width: 900px; /* limit the page width so lines of text stay readable */
+    margin: 0 auto; /* centre the page horizontally */
+    background-color: #ffffff; /* white sheet on top of the patterned body */
+    border: 1px solid #9fbcbd; /* thin light-teal outline */
+    border-radius: 14px; /* rounded page corners */
+    overflow: hidden; /* clip children (header/footer) to the rounded corners */
+    box-shadow: 0 8px 24px rgba(23, 57, 74, 0.25); /* soft shadow so the page floats above the background */
+}
+
+main {
+    padding: 8px 32px 24px 32px; /* inner space: top 8, right 32, bottom 24, left 32 */
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    background-color: #17394a; /* header background colour (deep blue) */
+    color: #f6f4ef; /* light text on the dark background */
+    padding: 44px 24px 36px 24px; /* header padding: top 44, sides 24, bottom 36 */
+    text-align: center; /* centre the header text */
+    border-bottom: 6px double #a6452f; /* double brick-red line under the header */
+}
+
+.site-title {
+    margin: 0 0 8px 0; /* no margin except 8px below the title */
+    font-family: 'Marcellus', Georgia, serif; /* heading font */
+    font-size: 3.2rem; /* large title (3.2 x root size) */
+    font-weight: 400; /* normal weight; Marcellus has no bold */
+    letter-spacing: 0.04em; /* slightly open letter spacing */
+}
+
+.tagline {
+    margin: 0; /* remove default paragraph margins */
+    font-size: 1.1rem; /* slightly larger than body text */
+    font-style: italic; /* italic subtitle */
+    color: #bcd6d6; /* soft light-teal colour */
+}
+
+/* ---------- Navigation ---------- */
+.main-nav {
+    background-color: #2f6f7e; /* teal navigation bar */
+    padding: 10px 0; /* 10px above and below the links */
+    text-align: center; /* centre the inline-block list items */
+}
+
+.main-nav ul {
+    margin: 0; /* remove the default list margin */
+    padding: 0; /* remove the default list indent */
+    list-style: none; /* remove the bullets */
+}
+
+.nav-item {
+    display: inline-block; /* put list items side by side in one row */
+    margin: 4px 6px; /* spacing between the links: 4px vertical, 6px horizontal */
+}
+
+.nav-link {
+    display: inline-block; /* lets the link accept width and height */
+    width: 150px; /* fixed width so all buttons are equal */
+    height: 44px; /* fixed height of the button */
+    line-height: 44px; /* same as height, so the text is vertically centred */
+    padding: 0 8px; /* horizontal padding inside the button */
+    box-sizing: border-box; /* include padding and border in the width/height */
+    text-align: center; /* centre the link text */
+    text-decoration: none; /* remove the underline */
+    text-transform: uppercase; /* make link text UPPERCASE */
+    font-size: 0.85rem; /* slightly smaller text */
+    font-weight: 600; /* semi-bold */
+    letter-spacing: 0.08em; /* spaced letters suit uppercase text */
+    color: #ffffff; /* white link text */
+    border: 1px solid rgba(255, 255, 255, 0.45); /* faint white outline */
+    border-radius: 22px; /* pill-shaped button (half of the height) */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #a6452f; /* brick-red background on hover or keyboard focus */
+    border-color: #a6452f; /* border matches the new background */
+}
+
+/* ---------- Headings and text ---------- */
+h2,
+h3 {
+    font-family: 'Marcellus', Georgia, serif; /* heading font for h2 and h3 */
+    color: #17394a; /* deep blue headings */
+}
+
+.section-title {
+    margin: 36px 0 16px 0; /* 36px above, 16px below the section heading */
+    padding-bottom: 8px; /* gap between the text and the line under it */
+    font-size: 2rem; /* h2 size */
+    font-weight: 400; /* normal weight */
+    text-align: left; /* left-align the heading */
+    border-bottom: 2px solid #a6452f; /* solid brick-red underline */
+}
+
+.attraction-title {
+    margin: 0 0 14px 0; /* only a bottom margin of 14px */
+    font-size: 1.5rem; /* h3 size, smaller than h2 */
+    font-weight: 700; /* bold */
+    text-align: left; /* left-align the heading */
+}
+
+p {
+    margin: 0 0 14px 0; /* space below each paragraph */
+    text-align: left; /* left-align paragraphs by default */
+}
+
+.intro-text {
+    text-align: justify; /* justified text for the welcome paragraph */
+}
+
+.highlight {
+    margin: 20px 0; /* 20px above and below the tip box */
+    padding: 14px 20px; /* inner space: 14px vertical, 20px horizontal */
+    background-color: #dcebe8; /* mint background */
+    border-left: 8px solid #2f6f7e; /* thick teal bar on the left side only */
+    border-radius: 0 10px 10px 0; /* round only the right-hand corners */
+    font-style: italic; /* italic tip text */
+}
+
+.place-name {
+    color: #a6452f; /* brick-red colour for the place name (inside <strong>) */
+}
+
+.museum-name {
+    color: #2f6f7e; /* teal colour for the museum name (inside <em>) */
+    font-weight: 600; /* semi-bold */
+}
+
+.text-link,
+.contact-link {
+    color: #2f6f7e; /* teal links */
+    font-weight: 600; /* semi-bold links */
+    text-decoration: underline; /* keep the underline so links are obvious in the text */
+}
+
+.text-link:hover,
+.contact-link:hover {
+    color: #a6452f; /* links turn brick red on hover */
+}
+
+/* ---------- Attractions ---------- */
+.attraction {
+    margin: 0 0 28px 0; /* space between attraction blocks */
+    padding: 22px 26px; /* inner space: 22px vertical, 26px horizontal */
+    background-color: #f6f4ef; /* stone background to separate the block from the page */
+    border: 2px solid #a6452f; /* solid brick-red border */
+    border-radius: 16px; /* rounded corners */
+    box-shadow: 4px 4px 0 #d9cdbb; /* hard offset shadow gives a card look */
+}
+
+.photo {
+    display: block; /* block display so margin auto can centre the image */
+    width: 100%; /* fill the available width of the block... */
+    max-width: 560px; /* ...but never wider than 560px */
+    height: auto; /* height follows the width, keeping proportions */
+    margin: 0 auto 18px auto; /* centre horizontally, 18px below */
+    border: 4px solid #ffffff; /* white photo frame */
+    border-radius: 12px; /* rounded image corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* light shadow under the photo */
+}
+
+.attraction-text {
+    margin-bottom: 12px; /* slightly tighter spacing than normal paragraphs */
+}
+
+/* ---------- Table ---------- */
+.tips-table {
+    width: 100%; /* table fills the content width */
+    border-collapse: collapse; /* merge neighbouring cell borders into single lines */
+    margin: 12px 0 18px 0; /* space above and below the table */
+    background-color: #ffffff; /* white table background */
+    border: 2px solid #17394a; /* dark outer border around the table */
+}
+
+.tips-caption {
+    padding: 8px 0 10px 0; /* space above and below the caption text */
+    font-style: italic; /* italic caption */
+    text-align: center; /* centre the caption */
+    color: #17394a; /* deep blue caption text */
+}
+
+.tips-heading {
+    padding: 12px 14px; /* header cell padding */
+    background-color: #17394a; /* dark header row background */
+    color: #ffffff; /* white header text */
+    font-family: 'Marcellus', Georgia, serif; /* heading font in the header row */
+    font-size: 1.1rem; /* slightly larger header text */
+    font-weight: 400; /* normal weight */
+    text-align: left; /* left-align header text */
+    border: 1px solid #17394a; /* header cell border matches its background */
+}
+
+.tip-label,
+.tip-value {
+    padding: 10px 14px; /* cell padding for both row labels and values */
+    border: 1px solid #9fbcbd; /* thin light-teal cell borders */
+    text-align: left; /* left-align cell text */
+    vertical-align: top; /* align text to the top of the cell */
+}
+
+.tip-label {
+    width: 28%; /* first column takes about a quarter of the table */
+    color: #a6452f; /* brick-red row labels */
+    font-weight: 700; /* bold row labels */
+}
+
+.tip-row:nth-child(odd) {
+    background-color: #ffffff; /* odd rows: white */
+}
+
+.tip-row:nth-child(even) {
+    background-color: #dcebe8; /* even rows: mint (zebra striping) */
+}
+
+.note {
+    padding: 12px 16px; /* inner space of the note box */
+    border: 2px dashed #a6452f; /* dashed brick-red border (different border style) */
+    border-radius: 10px; /* rounded corners */
+    background-color: #fbf4f1; /* very light red-tinted background */
+}
+
+/* ---------- Contact ---------- */
+.contact {
+    margin-top: 12px; /* extra space above the contact section */
+    padding: 0 0 8px 0; /* small space at the bottom */
+    text-align: center; /* centre the contact section content */
+}
+
+.contact .section-title {
+    text-align: center; /* centre the contact heading (overrides the left alignment) */
+}
+
+.contact p {
+    text-align: center; /* centre the contact paragraph (overrides the left alignment) */
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 22px 24px; /* footer padding: 22 vertical, 24 horizontal */
+    background-color: #17394a; /* same deep blue as the header */
+    color: #bcd6d6; /* soft light-teal text */
+    text-align: center; /* centre the footer text */
+    border-top: 6px double #a6452f; /* double brick-red line above the footer */
+}
+
+.footer-text {
+    margin: 0; /* remove the default paragraph margin */
+    text-align: center; /* centre the copyright text */
+    font-size: 0.95rem; /* slightly smaller text */
+}
+
+/* ---------- Small screens (max width 600px) ---------- */
+@media (max-width: 600px) {
+    main {
+        padding: 8px 16px 16px 16px; /* less side padding on phones */
+    }
+
+    .site-title {
+        font-size: 2.4rem; /* smaller title so it fits on narrow screens */
+    }
+
+    .nav-link {
+        width: 130px; /* narrower nav buttons so more fit per row */
+    }
+
+    .attraction {
+        padding: 16px; /* less padding inside attraction blocks */
+    }
+
+    .tip-label {
+        width: auto; /* let the first table column size itself */
+    }
+}
