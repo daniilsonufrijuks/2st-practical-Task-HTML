@@ -273,25 +273,3 @@ p {
     font-size: 0.95rem; /* slightly smaller text */
 }
 
-/* ---------- Small screens (max width 600px) ---------- */
-@media (max-width: 600px) {
-    main {
-        padding: 8px 16px 16px 16px; /* less side padding on phones */
-    }
-
-    .site-title {
-        font-size: 2.4rem; /* smaller title so it fits on narrow screens */
-    }
-
-    .nav-link {
-        width: 130px; /* narrower nav buttons so more fit per row */
-    }
-
-    .attraction {
-        padding: 16px; /* less padding inside attraction blocks */
-    }
-
-    .tip-label {
-        width: auto; /* let the first table column size itself */
-    }
-}
