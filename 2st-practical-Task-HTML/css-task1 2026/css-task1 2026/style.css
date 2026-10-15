@@ -169,7 +169,11 @@ p {
     background-color: #f6f4ef; /* stone background to separate the block from the page */
     border: 2px solid #a6452f; /* solid brick-red border */
     border-radius: 16px; /* rounded corners */
-    box-shadow: 4px 4px 0 #d9cdbb; /* hard offset shadow gives a card look */
+    box-shadow: 10px 10px 0 #d9cdbb; /* hard offset shadow gives a card look */
+}
+
+.attraction:hover {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25); /* soft shadow on hover */
 }
 
 .photo {
@@ -238,8 +242,8 @@ p {
 
 .note {
     padding: 12px 16px; /* inner space of the note box */
-    border: 2px dashed #a6452f; /* dashed brick-red border (different border style) */
-    border-radius: 10px; /* rounded corners */
+    border: 2px dashed #367ecf; /* dashed brick-red border (different border style) */
+    border-radius: 5px; /* rounded corners */
     background-color: #fbf4f1; /* very light red-tinted background */
 }
 
