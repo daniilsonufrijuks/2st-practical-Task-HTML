@@ -1,279 +1,306 @@
 /* Please put your name, last name, studentID number in this comment */
 /* Daniils Onufrijuks do62022 */
 
-
-/* Load the two Google fonts used on the page */
+/* Google fonts: Marcellus for headings, Source Sans 3 for body text */
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap');
 
-/* ---------- Base / body ---------- */
+/* Body: reset the default margin, set the base font and colours,
+   and tile a small SVG pattern as the background image */
 body {
-    margin: 0; /* remove the browser's default outer margin */
-    padding: 24px 12px; /* space between the window edge and the page: 24px top/bottom, 12px left/right */
-    font-family: 'Source Sans 3', Arial, sans-serif; /* body font, with fallbacks if the font fails to load */
-    font-size: 18px; /* base text size */
-    line-height: 1.6; /* comfortable spacing between lines of text */
-    color: #22303a; /* default text colour (dark ink) */
-    background-color: #c9dcdc; /* fallback colour behind the pattern */
-    /* background image: inline SVG of overlapping arcs (Art Nouveau-style scales) */
+    margin: 0; /* browsers add 8px by default */
+    padding: 24px 12px;
+    font-family: 'Source Sans 3', Arial, sans-serif; /* Arial is the backup if the font doesn't load */
+    font-size: 18px;
+    line-height: 1.6; 
+    color: #22303a;
+    background-color: #c9dcdc; /* shows if the image doesn't load */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 24a24 24 0 0 1 48 0' fill='none' stroke='%23a9c6c8' stroke-width='1.5'/%3E%3Cpath d='M-24 12a24 24 0 0 1 48 0M24 12a24 24 0 0 1 48 0' fill='none' stroke='%23a9c6c8' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-repeat: repeat; /* tile the pattern horizontally and vertically */
-    background-position: top center; /* start tiling from the top centre of the page */
+    background-repeat: repeat; /* tile in both directions */
+    /* background position is to centre the pattern */
+    background-position: top center;
 }
 
+/* The white "sheet" that holds the whole page: centred, max 900px wide,
+   with rounded corners and a soft shadow */
 #page {
-    max-width: 900px; /* limit the page width so lines of text stay readable */
-    margin: 0 auto; /* centre the page horizontally */
-    background-color: #ffffff; /* white sheet on top of the patterned body */
-    border: 1px solid #9fbcbd; /* thin light-teal outline */
-    border-radius: 14px; /* rounded page corners */
-    overflow: hidden; /* clip children (header/footer) to the rounded corners */
-    box-shadow: 0 8px 24px rgba(23, 57, 74, 0.25); /* soft shadow so the page floats above the background */
+    max-width: 900px;
+    margin: 0 auto; /* auto left/right margins centre the page */
+    background-color: #ffffff;
+    border: 1px solid #9fbcbd;
+    border-radius: 14px;
+    overflow: hidden; /* so the header and footer follow the rounded corners */
+    box-shadow: 0 8px 24px rgba(23, 57, 74, 0.25);
 }
 
+/* Inner spacing for the main content area */
 main {
-    padding: 8px 32px 24px 32px; /* inner space: top 8, right 32, bottom 24, left 32 */
+    padding: 8px 32px 24px 32px; /* top, right, bottom, left */
 }
 
-/* ---------- Header ---------- */
+/* Header: dark blue band with centred light text and a double line under it */
 .site-header {
-    background-color: #17394a; /* header background colour (deep blue) */
-    color: #f6f4ef; /* light text on the dark background */
-    padding: 44px 24px 36px 24px; /* header padding: top 44, sides 24, bottom 36 */
-    text-align: center; /* centre the header text */
-    border-bottom: 6px double #a6452f; /* double brick-red line under the header */
+    background-color: #17394a;
+    color: #f6f4ef;
+    padding: 44px 24px 36px 24px;
+    text-align: center;
+    border-bottom: 6px double #a6452f;
 }
 
+/* Big site title and the smaller italic tagline under it */
 .site-title {
-    margin: 0 0 8px 0; /* no margin except 8px below the title */
-    font-family: 'Marcellus', Georgia, serif; /* heading font */
-    font-size: 3.2rem; /* large title (3.2 x root size) */
-    font-weight: 400; /* normal weight; Marcellus has no bold */
-    letter-spacing: 0.04em; /* slightly open letter spacing */
+    margin: 0 0 8px 0;
+    font-family: 'Marcellus', Georgia, serif;
+    font-size: 3.2rem; /* rem = relative to the root font size */
+    font-weight: 400; /* Marcellus only has a regular weight */
+    letter-spacing: 0.04em;
 }
 
 .tagline {
-    margin: 0; /* remove default paragraph margins */
-    font-size: 1.1rem; /* slightly larger than body text */
-    font-style: italic; /* italic subtitle */
-    color: #bcd6d6; /* soft light-teal colour */
+    margin: 0;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #bcd6d6;
 }
 
-/* ---------- Navigation ---------- */
+/* Navigation bar: teal strip with the list centred and bullets removed */
 .main-nav {
-    background-color: #2f6f7e; /* teal navigation bar */
-    padding: 10px 0; /* 10px above and below the links */
-    text-align: center; /* centre the inline-block list items */
+    background-color: #2f6f7e;
+    padding: 10px 0;
+    text-align: center; /* centres the inline-block items */
 }
 
 .main-nav ul {
-    margin: 0; /* remove the default list margin */
-    padding: 0; /* remove the default list indent */
-    list-style: none; /* remove the bullets */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* removes the bullets */
 }
 
+/* Menu items sit in a row (inline-block) with a bit of space between them */
 .nav-item {
-    display: inline-block; /* put list items side by side in one row */
-    margin: 4px 6px; /* spacing between the links: 4px vertical, 6px horizontal */
+    display: inline-block;
+    margin: 4px 6px;
 }
 
+/* Each link looks like a pill button: fixed size, uppercase text,
+   no underline, white outline */
 .nav-link {
-    display: inline-block; /* lets the link accept width and height */
-    width: 150px; /* fixed width so all buttons are equal */
-    height: 44px; /* fixed height of the button */
-    line-height: 44px; /* same as height, so the text is vertically centred */
-    padding: 0 8px; /* horizontal padding inside the button */
-    box-sizing: border-box; /* include padding and border in the width/height */
-    text-align: center; /* centre the link text */
-    text-decoration: none; /* remove the underline */
-    text-transform: uppercase; /* make link text UPPERCASE */
-    font-size: 0.85rem; /* slightly smaller text */
-    font-weight: 600; /* semi-bold */
-    letter-spacing: 0.08em; /* spaced letters suit uppercase text */
-    color: #ffffff; /* white link text */
-    border: 1px solid rgba(255, 255, 255, 0.45); /* faint white outline */
-    border-radius: 22px; /* pill-shaped button (half of the height) */
+    display: inline-block; /* needed so width and height work on a link */
+    width: 150px;
+    height: 44px;
+    line-height: 44px; /* same as height, which centres the text vertically */
+    padding: 0 8px;
+    box-sizing: border-box; /* padding and border stay inside the 150px */
+    text-align: center;
+    text-decoration: none; /* no underline */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    /* letter spacing is to create space between characters */
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.45); /* semi-transparent white */
+    border-radius: 22px; /* half the height, so the ends are fully round */
 }
 
+/* Links turn brick red on hover or when tabbed to */
 .nav-link:hover,
 .nav-link:focus {
-    background-color: #a6452f; /* brick-red background on hover or keyboard focus */
-    border-color: #a6452f; /* border matches the new background */
+    background-color: #a6452f;
+    border-color: #a6452f;
 }
 
-/* ---------- Headings and text ---------- */
+/* Headings: same font and colour for h2 and h3; section titles get
+   an underline, attraction titles are smaller and bold */
 h2,
 h3 {
-    font-family: 'Marcellus', Georgia, serif; /* heading font for h2 and h3 */
-    color: #17394a; /* deep blue headings */
+    font-family: 'Marcellus', Georgia, serif;
+    color: #17394a;
 }
 
 .section-title {
-    margin: 36px 0 16px 0; /* 36px above, 16px below the section heading */
-    padding-bottom: 8px; /* gap between the text and the line under it */
-    font-size: 2rem; /* h2 size */
-    font-weight: 400; /* normal weight */
-    text-align: left; /* left-align the heading */
-    border-bottom: 2px solid #a6452f; /* solid brick-red underline */
+    /* margin is to create space above the title */
+    margin: 36px 0 16px 0;
+    padding-bottom: 8px; /* gap between the text and the underline */
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    border-bottom: 2px solid #a6452f;
 }
 
 .attraction-title {
-    margin: 0 0 14px 0; /* only a bottom margin of 14px */
-    font-size: 1.5rem; /* h3 size, smaller than h2 */
-    font-weight: 700; /* bold */
-    text-align: left; /* left-align the heading */
+    margin: 0 0 14px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
 }
 
+/* Paragraphs: left-aligned with space below; the intro text is justified */
 p {
-    margin: 0 0 14px 0; /* space below each paragraph */
-    text-align: left; /* left-align paragraphs by default */
+    margin: 0 0 14px 0;
+    text-align: left;
 }
 
 .intro-text {
-    text-align: justify; /* justified text for the welcome paragraph */
+    text-align: justify;
 }
 
+/* Travel tip box in the intro: mint background, thick teal bar on the left */
 .highlight {
-    margin: 20px 0; /* 20px above and below the tip box */
-    padding: 14px 20px; /* inner space: 14px vertical, 20px horizontal */
-    background-color: #dcebe8; /* mint background */
-    border-left: 8px solid #2f6f7e; /* thick teal bar on the left side only */
-    border-radius: 0 10px 10px 0; /* round only the right-hand corners */
-    font-style: italic; /* italic tip text */
+    margin: 20px 0; /* 20px top and bottom, 0 left and right */
+    padding: 14px 20px;
+    background-color: #dcebe8;
+    border-left: 8px solid #2f6f7e;
+    border-radius: 0 10px 10px 0; /* only the right-hand corners are rounded */
+    font-style: italic;
 }
 
+/* Coloured place and museum names inside the text */
 .place-name {
-    color: #a6452f; /* brick-red colour for the place name (inside <strong>) */
+    color: #a6452f;
 }
 
 .museum-name {
-    color: #2f6f7e; /* teal colour for the museum name (inside <em>) */
-    font-weight: 600; /* semi-bold */
+    color: #2f6f7e;
+    font-weight: 600;
 }
 
+/* Links in the text stay underlined and change colour on hover */
 .text-link,
 .contact-link {
-    color: #2f6f7e; /* teal links */
-    font-weight: 600; /* semi-bold links */
-    text-decoration: underline; /* keep the underline so links are obvious in the text */
+    color: #2f6f7e;
+    font-weight: 600;
+    /* text decoration is to create the underline */
+    text-decoration: underline;
 }
 
 .text-link:hover,
 .contact-link:hover {
-    color: #a6452f; /* links turn brick red on hover */
+    color: #a6452f;
 }
 
-/* ---------- Attractions ---------- */
+/* Attraction cards: separate blocks with border, padding, rounded corners
+   and a hard shadow that softens when you hover over the card */
 .attraction {
-    margin: 0 0 28px 0; /* space between attraction blocks */
-    padding: 22px 26px; /* inner space: 22px vertical, 26px horizontal */
-    background-color: #f6f4ef; /* stone background to separate the block from the page */
-    border: 2px solid #a6452f; /* solid brick-red border */
-    border-radius: 16px; /* rounded corners */
-    box-shadow: 10px 10px 0 #d9cdbb; /* hard offset shadow gives a card look */
+    margin: 0 0 28px 0; /* space only below, between the cards */
+    padding: 22px 26px;
+    background-color: #f6f4ef;
+    border: 2px solid #a6452f;
+    border-radius: 16px;
+    box-shadow: 10px 10px 0 #d9cdbb; /* 0 blur gives a solid offset shadow */
 }
 
 .attraction:hover {
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25); /* soft shadow on hover */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
 }
 
+/* Photos: centred, never wider than 560px, height auto keeps the
+   proportions, with a white frame and rounded corners */
 .photo {
-    display: block; /* block display so margin auto can centre the image */
-    width: 100%; /* fill the available width of the block... */
-    max-width: 560px; /* ...but never wider than 560px */
-    height: auto; /* height follows the width, keeping proportions */
-    margin: 0 auto 18px auto; /* centre horizontally, 18px below */
-    border: 4px solid #ffffff; /* white photo frame */
-    border-radius: 12px; /* rounded image corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* light shadow under the photo */
+    display: block; /* so auto margins can centre it */
+    width: 100%;
+    max-width: 560px;
+    height: auto; /* keeps the original proportions */
+    margin: 0 auto 18px auto;
+    border: 4px solid #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .attraction-text {
-    margin-bottom: 12px; /* slightly tighter spacing than normal paragraphs */
+    margin-bottom: 12px;
 }
 
-/* ---------- Table ---------- */
+/* Travel tips table: full width, collapsed borders, dark outline,
+   centred italic caption */
 .tips-table {
-    width: 100%; /* table fills the content width */
-    border-collapse: collapse; /* merge neighbouring cell borders into single lines */
-    margin: 12px 0 18px 0; /* space above and below the table */
-    background-color: #ffffff; /* white table background */
-    border: 2px solid #17394a; /* dark outer border around the table */
+    width: 100%;
+    border-collapse: collapse; /* merges neighbouring borders into one line */
+    margin: 12px 0 18px 0;
+    background-color: #ffffff;
+    border: 2px solid #17394a;
 }
 
 .tips-caption {
-    padding: 8px 0 10px 0; /* space above and below the caption text */
-    font-style: italic; /* italic caption */
-    text-align: center; /* centre the caption */
-    color: #17394a; /* deep blue caption text */
+    padding: 8px 0 10px 0;
+    font-style: italic;
+    text-align: center;
+    color: #17394a;
 }
 
+/* Table header row: dark background with white heading text */
 .tips-heading {
-    padding: 12px 14px; /* header cell padding */
-    background-color: #17394a; /* dark header row background */
-    color: #ffffff; /* white header text */
-    font-family: 'Marcellus', Georgia, serif; /* heading font in the header row */
-    font-size: 1.1rem; /* slightly larger header text */
-    font-weight: 400; /* normal weight */
-    text-align: left; /* left-align header text */
-    border: 1px solid #17394a; /* header cell border matches its background */
+    /* padding is for spacing within the cell */
+    padding: 12px 14px;
+    background-color: #17394a;
+    color: #ffffff;
+    font-family: 'Marcellus', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: left;
+    border: 1px solid #17394a; /* same colour as the background, so it blends in */
 }
 
+/* Table cells: shared padding and borders, with the first column
+   (row labels) narrower, bold and red */
 .tip-label,
 .tip-value {
-    padding: 10px 14px; /* cell padding for both row labels and values */
-    border: 1px solid #9fbcbd; /* thin light-teal cell borders */
-    text-align: left; /* left-align cell text */
-    vertical-align: top; /* align text to the top of the cell */
+    padding: 10px 14px;
+    border: 1px solid #9fbcbd;
+    text-align: left;
+    /* vertical alignment for content within the cell */
+    vertical-align: top;
 }
 
 .tip-label {
-    width: 28%; /* first column takes about a quarter of the table */
-    color: #a6452f; /* brick-red row labels */
-    font-weight: 700; /* bold row labels */
+    width: 28%;
+    color: #a6452f;
+    font-weight: 700;
 }
 
+/* Alternate row colours (white / mint) so the rows are easier to read */
 .tip-row:nth-child(odd) {
-    background-color: #ffffff; /* odd rows: white */
+    background-color: #ffffff;
 }
 
 .tip-row:nth-child(even) {
-    background-color: #dcebe8; /* even rows: mint (zebra striping) */
+    background-color: #dcebe8;
 }
 
+/* "Remember" note under the table: dashed blue border, slightly rounded */
 .note {
-    padding: 12px 16px; /* inner space of the note box */
-    border: 2px dashed #367ecf; /* dashed brick-red border (different border style) */
-    border-radius: 5px; /* rounded corners */
-    background-color: #fbf4f1; /* very light red-tinted background */
+    padding: 12px 16px;
+    border: 2px dashed #367ecf;
+    border-radius: 5px;
+    background-color: #fbf4f1;
 }
 
-/* ---------- Contact ---------- */
+/* Contact section: everything centred, including the heading and text
+   (these override the left alignment set above) */
 .contact {
-    margin-top: 12px; /* extra space above the contact section */
-    padding: 0 0 8px 0; /* small space at the bottom */
-    text-align: center; /* centre the contact section content */
+    margin-top: 12px;
+    padding: 0 0 8px 0;
+    text-align: center;
 }
 
 .contact .section-title {
-    text-align: center; /* centre the contact heading (overrides the left alignment) */
+    text-align: center; /* overrides text-align: left from .section-title */
 }
 
 .contact p {
-    text-align: center; /* centre the contact paragraph (overrides the left alignment) */
+    text-align: center; /* overrides text-align: left from p */
 }
 
-/* ---------- Footer ---------- */
+/* Footer: same dark blue as the header, centred text, double line on top */
 .site-footer {
-    padding: 22px 24px; /* footer padding: 22 vertical, 24 horizontal */
-    background-color: #17394a; /* same deep blue as the header */
-    color: #bcd6d6; /* soft light-teal text */
-    text-align: center; /* centre the footer text */
-    border-top: 6px double #a6452f; /* double brick-red line above the footer */
+    padding: 22px 24px;
+    background-color: #17394a;
+    color: #bcd6d6;
+    text-align: center;
+    border-top: 6px double #a6452f;
 }
 
 .footer-text {
-    margin: 0; /* remove the default paragraph margin */
-    text-align: center; /* centre the copyright text */
-    font-size: 0.95rem; /* slightly smaller text */
+    margin: 0;
+    text-align: center;
+    font-size: 0.95rem;
 }
-
