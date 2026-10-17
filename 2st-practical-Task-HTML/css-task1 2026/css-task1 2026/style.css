@@ -1,4 +1,3 @@
-/* Please put your name, last name, studentID number in this comment */
 /* Daniils Onufrijuks do62022 */
 
 /* Google fonts: Marcellus for headings, Source Sans 3 for body text */
@@ -14,6 +13,7 @@ body {
     line-height: 1.6; 
     color: #22303a;
     background-color: #c9dcdc; /* shows if the image doesn't load */
+    /* image from the SVG pattern */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 24a24 24 0 0 1 48 0' fill='none' stroke='%23a9c6c8' stroke-width='1.5'/%3E%3Cpath d='M-24 12a24 24 0 0 1 48 0M24 12a24 24 0 0 1 48 0' fill='none' stroke='%23a9c6c8' stroke-width='1.5'/%3E%3C/svg%3E");
     background-repeat: repeat; /* tile in both directions */
     /* background position is to centre the pattern */
