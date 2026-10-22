@@ -43,7 +43,7 @@ main {
     color: #f6f4ef;
     padding: 44px 24px 36px 24px;
     text-align: center;
-    border-bottom: 6px double #a6452f;
+    border-bottom: 12px double #78a62f;
 }
 
 /* Big site title and the smaller italic tagline under it */
@@ -60,6 +60,7 @@ main {
     font-size: 1.1rem;
     font-style: italic;
     color: #bcd6d6;
+    text-align: center;
 }
 
 /* Navigation bar: teal strip with the list centred and bullets removed */
@@ -101,14 +102,14 @@ main {
     letter-spacing: 0.08em;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.45); /* semi-transparent white */
-    border-radius: 22px; /* half the height, so the ends are fully round */
+    border-radius: 5px; /* half the height, so the ends are fully round */
 }
 
 /* Links turn brick red on hover or when tabbed to */
 .nav-link:hover,
 .nav-link:focus {
-    background-color: #a6452f;
-    border-color: #a6452f;
+    background-color: #2f45a6;
+    border-color: #2f8ea6;
 }
 
 /* Headings: same font and colour for h2 and h3; section titles get
@@ -126,7 +127,7 @@ h3 {
     font-size: 2rem;
     font-weight: 400;
     text-align: left;
-    border-bottom: 2px solid #a6452f;
+    border-bottom: 4px solid #215497;
 }
 
 .attraction-title {
@@ -186,8 +187,8 @@ p {
     margin: 0 0 28px 0; /* space only below, between the cards */
     padding: 22px 26px;
     background-color: #f6f4ef;
-    border: 2px solid #a6452f;
-    border-radius: 16px;
+    border: 2px solid #6c2fa6;
+    border-radius: 7px;
     box-shadow: 10px 10px 0 #d9cdbb; /* 0 blur gives a solid offset shadow */
 }
 
@@ -255,9 +256,30 @@ p {
 
 .tip-label {
     width: 28%;
-    color: #a6452f;
+    /* background-image here is a linear gradient */
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 300% 100%;
+    /*  clip is used to apply the gradient to the text */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     font-weight: 700;
+    /* animation is used to create the color transition effect */
+    animation: tip-label-color 4s linear infinite;
+
 }
+
+/*  @keyframes is used to define the animation */
+@keyframes tip-label-color {
+    from {
+        background-position: 100% 50%;
+    }
+
+    to {
+        background-position: 0 50%;
+    }
+}
+
 
 /* Alternate row colours (white / mint) so the rows are easier to read */
 .tip-row:nth-child(odd) {
