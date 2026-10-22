@@ -256,13 +256,7 @@ p {
 
 .tip-label {
     width: 28%;
-    /* background-image here is a linear gradient */
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    background-size: 300% 100%;
-    /*  clip is used to apply the gradient to the text */
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #a6452f;
     font-weight: 700;
     /* animation is used to create the color transition effect */
     animation: tip-label-color 4s linear infinite;
@@ -271,12 +265,24 @@ p {
 
 /*  @keyframes is used to define the animation */
 @keyframes tip-label-color {
-    from {
-        background-position: 100% 50%;
+    0% {
+        color: #a6452f;
     }
 
-    to {
-        background-position: 0 50%;
+    25% {
+        color: #a66b2f;
+    }
+
+    50% {
+        color: #2f6f7e;
+    }
+
+    75% {
+        color: #6c2fa6;
+    }
+
+    100% {
+        color: #a6452f;
     }
 }
 
